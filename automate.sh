@@ -4,7 +4,7 @@ set -euo pipefail
 # Usage: ./automate.sh [audit|features|deploy|all]   (default: all)
 # Env toggles: DEPLOY_REMOTE=1 REMOTE_HOST=4 REMOTE_PATH=/srv/<name>
 
-REPO="/Applications/my_projects/dataalgebra_AI_POC/project-burnside-www-production"
+REPO="YOUR_LOCAL_REPO"
 AUDIT="$REPO/audit"
 LOGS="$REPO/logs/automate"
 STAMP="$(date +%Y%m%d-%H%M%S)"
@@ -12,8 +12,8 @@ DATE="$(date +%F)"
 STAGE="${1:-all}"
 
 DEPLOY_REMOTE="${DEPLOY_REMOTE:-0}"
-REMOTE_HOST="${REMOTE_HOST:-4}"
-REMOTE_PATH="${REMOTE_PATH:-/srv/project-burnside-www-production}"
+REMOTE_HOST="${REMOTE_HOST:-REMOTE_ALIAS}"
+REMOTE_PATH="${REMOTE_PATH:-/srv/PATH_TO_DEPLOY}"
 
 mkdir -p "$AUDIT/reports" "$LOGS"
 cd "$REPO"
